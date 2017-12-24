@@ -1,6 +1,6 @@
 <template>
-  <div class="effect-dropdown">
-    <span class="effect-dropdown__label">
+  <div :class="dropdownCls">
+    <span class="effect-dropdown__label" :style="labelStyle" @click="toggle">
       {{ label }}
     </span>
 
@@ -17,6 +17,12 @@
   export default {
     name: 'EffectDropdown',
 
+    provide () {
+      return {
+        $$root: this,
+      }
+    },
+
     props: {
       type: {
         default: 'drawer',
@@ -32,7 +38,7 @@
       },
       label: String,
       gutter: {
-        type: [Number, String],
+        type: Number,
         default: 5,
       },
       activeColor: {
@@ -40,6 +46,41 @@
         default: '#fc756f',
       },
       raiseLabel: Boolean,
+    },
+
+    data () {
+      return {
+        items: [],
+        active: false,
+      }
+    },
+    computed: {
+      dropdownCls () {
+        return {
+          'effect-dropdown': true,
+          'effect-dropdown--active': this.active,
+        }
+      },
+      labelStyle () {
+        return {
+          color: this.active ? this.activeColor : null,
+        }
+      },
+    },
+
+    methods: {
+      addItem (vm, cb) {
+        this.items.push(vm)
+
+        cb && cb(this.items.length - 1)
+      },
+      toggle () {
+        this.active = !this.active
+      },
+
+      hide () {
+        this.toggle()
+      },
     },
   }
 </script>
