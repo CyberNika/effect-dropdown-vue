@@ -1,0 +1,31 @@
+
+$menu-item
+  padding: 0 menu-padding-horizontal
+  width: 100%
+  height: menu-height
+  background-color: #fff
+  line-height: menu-height
+  box-sizing: border-box
+
+.effect-dropdown
+  position: relative
+  display: inline-block
+  width: menu-width
+  color: #333
+
+  .effect-dropdown__label
+    @extend $menu-item
+
+    display: inline-block
+    color: #999
+
+  .effect-dropdown__content
+    position: absolute
+    padding-left: 0
+    width: 100%
+
+  .effect-dropdown-item
+    @extend $menu-item
+
+    & + .effect-dropdown-item
+      box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1)
