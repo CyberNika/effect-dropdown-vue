@@ -21,6 +21,8 @@
       <effect-dropdown label="Label">
         <effect-dropdown-item>Money</effect-dropdown-item>
         <effect-dropdown-item>Bear</effect-dropdown-item>
+        <effect-dropdown-item>Money1</effect-dropdown-item>
+        <effect-dropdown-item>Bear1</effect-dropdown-item>
       </effect-dropdown>
     </main>
   </div>

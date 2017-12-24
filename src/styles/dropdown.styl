@@ -6,6 +6,7 @@ $menu-item
   background-color: #fff
   line-height: menu-height
   box-sizing: border-box
+  cursor: pointer
 
 .effect-dropdown
   position: relative
@@ -16,16 +17,22 @@ $menu-item
   .effect-dropdown__label
     @extend $menu-item
 
+    position: relative
     display: inline-block
     color: #999
+    z-index: 1500
 
   .effect-dropdown__content
-    position: absolute
     padding-left: 0
+    margin: 0
     width: 100%
 
   .effect-dropdown-item
     @extend $menu-item
 
-    & + .effect-dropdown-item
-      box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1)
+    position: absolute
+    top: 0
+    left: 0
+    transition: all 0.25s ease
+    overflow: hidden
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
