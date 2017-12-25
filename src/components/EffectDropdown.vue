@@ -1,6 +1,6 @@
 <template>
   <div :class="dropdownCls">
-    <span class="effect-dropdown__label" :style="labelStyle" @click="toggle">
+    <span :class="labelCls" :style="labelStyle" @click="toggle">
       {{ label }}
     </span>
 
@@ -12,7 +12,7 @@
 
 <script>
   const TYPE_LIST = ['drawer', 'fence']
-  const EFFECT_LIST = ['randomAngle', 'arc']
+  const EFFECT_LIST = ['simple', 'randomAngle', 'camber']
 
   export default {
     name: 'EffectDropdown',
@@ -30,10 +30,10 @@
           return typeof value === 'string' && TYPE_LIST.indexOf(value) > -1
         },
       },
-      EFFECT_LIST: {
-        default: null,
+      effect: {
+        default: 'simple',
         validator (value) {
-          return !value || (typeof value === 'string' && TYPE_LIST.indexOf(value) > -1)
+          return !value || (typeof value === 'string' && EFFECT_LIST.indexOf(value) > -1)
         },
       },
       label: String,
@@ -64,6 +64,12 @@
       labelStyle () {
         return {
           color: this.active ? this.activeColor : null,
+        }
+      },
+      labelCls () {
+        return {
+          'effect-dropdown__label': true,
+          'effect-dropdown__label--raise': this.raiseLabel,
         }
       },
     },
