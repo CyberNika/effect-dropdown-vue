@@ -13,6 +13,8 @@ $menu-item
   display: inline-block
   width: menu-width
   color: #333
+  text-align: left
+  font-weight: 700
 
   .effect-dropdown__label
     @extend $menu-item
@@ -22,10 +24,19 @@ $menu-item
     color: #999
     z-index: 1500
 
+    &.effect-dropdown__label--raise
+      transition: transform .3s
+      transform-origin: 50% 0%
+      transform-style: preserve-3d
+
+      &:active
+        transform: rotateX(60deg)
+
   .effect-dropdown__content
     padding-left: 0
     margin: 0
     width: 100%
+    color: #bcbcbc
 
   .effect-dropdown-item
     @extend $menu-item
@@ -33,6 +44,10 @@ $menu-item
     position: absolute
     top: 0
     left: 0
-    transition: all 0.25s ease
+    transition: all 0.3s ease
     overflow: hidden
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
+
+  .effect-dropdown-item--active
+    &.effect-dropdown-item--camber
+      transform-origin: -200% 50%
