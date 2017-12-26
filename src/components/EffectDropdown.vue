@@ -11,8 +11,7 @@
 </template>
 
 <script>
-  const TYPE_LIST = ['drawer', 'fence']
-  const EFFECT_LIST = ['simple', 'randomAngle', 'camber']
+  const EFFECT_LIST = ['simple', 'random', 'camber', 'stagger', 'fence']
 
   export default {
     name: 'EffectDropdown',
@@ -24,12 +23,6 @@
     },
 
     props: {
-      type: {
-        default: 'drawer',
-        validator (value) {
-          return typeof value === 'string' && TYPE_LIST.indexOf(value) > -1
-        },
-      },
       effect: {
         default: 'simple',
         validator (value) {
@@ -46,6 +39,10 @@
         default: '#fc756f',
       },
       raiseLabel: Boolean,
+      autoHide: {
+        type: Boolean,
+        default: true,
+      },
     },
 
     data () {
@@ -74,6 +71,23 @@
       },
     },
 
+    watch: {
+      active (value) {
+        if (this.autoHide) {
+          if (value) {
+            document.body.addEventListener('click', this.handleBodyClick)
+          } else {
+            document.body.removeEventListener('click', this.handleBodyClick)
+          }
+        }
+      },
+    },
+    destroyed () {
+      if (this.autoHide) {
+        document.body.removeEventListener('click', this.handleBodyClick)
+      }
+    },
+
     methods: {
       addItem (vm, cb) {
         this.items.push(vm)
@@ -82,6 +96,14 @@
       },
       toggle () {
         this.active = !this.active
+      },
+
+      handleBodyClick (event) {
+        const notOutside = this.$el.contains(event.target)
+
+        if (!notOutside) {
+          this.active = false
+        }
       },
 
       hide () {

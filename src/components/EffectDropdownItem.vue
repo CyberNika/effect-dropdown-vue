@@ -59,7 +59,7 @@
         }
         const optionsMap = {
           simple: { ...commonOptions },
-          randomAngle: {
+          random: {
             default: {
               ...commonOptions.default,
               rotate: 0,
@@ -77,6 +77,22 @@
             active: {
               ...commonOptions.active,
               rotate: `${this.index * 5}deg`,
+            },
+          },
+          stagger: {
+            default: {
+              translate3d: [this.index % 2 ? '-40%' : '40%', 0, 0],
+            },
+            active: {
+              translate3d: [0, 0, 0],
+            },
+          },
+          fence: {
+            default: {
+              translate3d: [this.index % 2 ? '-50%' : '50%', 0, 0],
+            },
+            active: {
+              translate3d: [0, 0, 0],
             },
           },
         }
@@ -104,7 +120,7 @@
 
         const styleMap = {
           simple: {},
-          randomAngle: {
+          random: {
             left: this.active ? `${Math.floor(Math.random() * 10 - 5)}px` : 0,
             'transition-delay': this.active ?
               `${(items.length - this.index - 1) * 100}ms` :
@@ -117,6 +133,17 @@
             'transition-delay': this.active ?
               `${(items.length - this.index - 1) * 50}ms` :
               `${this.index * 50}ms`,
+          },
+          stagger: {
+            top: `${(this.index + 1) * (BASE.itemHeight + this.$$root.gutter)}px`,
+            opacity: Number(this.active),
+          },
+          fence: {
+            top: `${(this.index + 1) * (BASE.itemHeight + this.$$root.gutter)}px`,
+            opacity: Number(this.active),
+            'transition-delay': this.active ?
+              `${this.index * 100}ms` :
+              `${(items.length - this.index - 1) * 100}ms`,
           },
         }
 
@@ -155,7 +182,7 @@
 
         this.$emit('click', this, event)
 
-        this.autoHide && this.$$root.hide()
+        this.$$root.autoHide && this.$$root.hide()
       },
     },
   }

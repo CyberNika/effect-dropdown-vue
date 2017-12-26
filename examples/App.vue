@@ -1,20 +1,15 @@
 <template>
   <div id="app">
     <header>
-      <h1>
-        effect-dropdown
-        <iframe
-          class="gh-star"
-          scrolling="0"
-          width="170px"
-          height="20px"
-          src="https://ghbtns.com/github-btn.html?user=XBT1&repo=effect-dropdown&type=star&count=true" frameborder="0" >
-        </iframe>
-      </h1>
+      <img data-v-ed16f314="" src="https://vuejs.org/images/logo.png" alt="Vue.js" class="vue-logo">
 
-      <p>
-        <span class="description">Simple effects for Dropdown based on Vue.js</span>
-      </p>
+      <h1>EffectDropdown</h1>
+
+      <p class="description">Simple effects for Dropdown based on Vue.js.</p>
+
+      <a target="__blank" href="https://github.com/XBT1/effect-dropdown" class="github-link">
+        <img src="https://img.shields.io/github/stars/XBT1/effect-dropdown.svg?style=for-the-badage&amp;label=Stars" alt="GitHub Stars">
+      </a>
     </header>
 
     <main>
@@ -35,11 +30,11 @@
 
       <div class="dropdown-wrapper">
         <p class="dropdown-desc">
-          randomAngle 效果，折叠时具有些许间隔，激活时选项之间间隔 5px，每个选项具有随机的角度旋转和偏移，以及不同的 animation-delay
+          random 效果，折叠时具有些许间隔，激活时选项之间间隔 5px，每个选项具有随机的角度旋转和偏移，以及不同的 animation-delay
         </p>
 
         <div class="dropdown-main">
-          <effect-dropdown label="Label" active-color="#4d8c9d" effect="randomAngle">
+          <effect-dropdown label="Label" active-color="#4d8c9d" effect="random">
             <effect-dropdown-item>Money</effect-dropdown-item>
             <effect-dropdown-item>Bear</effect-dropdown-item>
             <effect-dropdown-item>Money1</effect-dropdown-item>
@@ -50,7 +45,7 @@
 
       <div class="dropdown-wrapper">
         <p class="dropdown-desc">
-          camber 效果，折叠时具有些许间隔，激活时选项之间间隔 5px，依次排列组成圆弧状，并有不同的 animation-delay
+          camber 效果，折叠时具有些许间隔，激活时选项之间间隔 5px，依次排列组成圆弧状，并有不同的 animation-delay。
         </p>
 
         <div class="dropdown-main">
@@ -78,7 +73,44 @@
           </effect-dropdown>
         </div>
       </div>
+
+      <div class="dropdown-wrapper">
+        <p class="dropdown-desc">
+          stagger 效果。默认不折叠，激活时从两侧滑入，且选项之间间隔 5px。
+        </p>
+
+        <div class="dropdown-main">
+          <effect-dropdown label="Label" active-color="#c29ad2" effect="stagger">
+            <effect-dropdown-item>Money</effect-dropdown-item>
+            <effect-dropdown-item>Bear</effect-dropdown-item>
+            <effect-dropdown-item>Money1</effect-dropdown-item>
+            <effect-dropdown-item>Bear1</effect-dropdown-item>
+          </effect-dropdown>
+        </div>
+      </div>
+
+      <div class="dropdown-wrapper">
+        <p class="dropdown-desc">
+          fence 效果。默认不折叠，激活时依次从两侧滑入，且选项之间间隔 5px，具有不同的 animation-delay。
+        </p>
+
+        <div class="dropdown-main">
+          <effect-dropdown label="Label" active-color="#e66b20" effect="fence">
+            <effect-dropdown-item>Money</effect-dropdown-item>
+            <effect-dropdown-item>Bear</effect-dropdown-item>
+            <effect-dropdown-item>Money1</effect-dropdown-item>
+            <effect-dropdown-item>Bear1</effect-dropdown-item>
+          </effect-dropdown>
+        </div>
+      </div>
     </main>
+
+    <footer>
+      <p>
+        Inspired by
+        <a target="__blank" href="https://tympanus.net/Development/SimpleDropDownEffects" class="reference-link">SimpleDropDownEffects</a>
+      </p>
+    </footer>
   </div>
 </template>
 
@@ -99,8 +131,23 @@
     max-width: 1000px
     margin: 0 auto
 
+  header
+    margin-top: 50px
+    text-align: center
+
+    .vue-logo
+      width: 90px
+
+    h1
+      margin: 0
+      font-size: 48px
+
+    .description
+      margin: 5px 0 12px
+      color: #555
+
   main
-    padding: 30px 0 60px
+    padding: 40px 0 60px
 
   .dropdown-wrapper
     padding: 10px
@@ -129,6 +176,14 @@
       line-height: 1.2
       font-weight: 300
       text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8)
+
+  footer
+    padding: 10px 0
+    text-align: center
+    color: #c3c8cd
+
+    a
+      color: #c3c8cd
 </style>
 
 <style lang="stylus">

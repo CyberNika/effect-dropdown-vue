@@ -11,7 +11,10 @@
   ],
   "keywords": [
     "vue",
-    "vue-component"
+    "dropdown",
+    "vue-component",
+    "vue-dropdown",
+    "effects"
   ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --content-base examples/ --hot",
