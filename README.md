@@ -20,19 +20,33 @@ $ yarn add effect-dropdown # npm i -S effect-dropdown
 
 ## 概览
 
-[访问在线示例]()
+[访问在线示例](https://xbt1.github.io/effect-dropdown/)
 
 ## 使用
 
 一个简单的例子
 
 ```javascript
+  import EffectDropdown from 'effect-dropdown'
+  import 'effect-dropdown/dist/index.css'
+
+  Vue.use(EffectDropdown)
 ```
 
 ```html
 <template>
+  <div class="dropdown-main">
+    <effect-dropdown label="Label" active-color="#97d1bc" effect="camber">
+      <effect-dropdown-item>Facebook</effect-dropdown-item>
+      <effect-dropdown-item>Twitter</effect-dropdown-item>
+      <effect-dropdown-item>Google</effect-dropdown-item>
+      <effect-dropdown-item>Airbnb</effect-dropdown-item>
+    </effect-dropdown>
+  </div>
 </template>
 ```
+
+详细使用方法见 [文档](./docs/usage.md) & [例子](./examples)
 
 ## 开发
 
