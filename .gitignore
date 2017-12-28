@@ -1,7 +1,5 @@
 .DS_Store
 node_modules/
-dist/
-sites/
 npm-debug.log
 yarn-error.log
 
@@ -11,3 +9,7 @@ yarn-error.log
 *.ntvs*
 *.njsproj
 *.sln
+
+# package output
+dist/
+sites/

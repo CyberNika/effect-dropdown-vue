@@ -11,3 +11,5 @@ export const transform = (values = {}) => {
 
   return result.join(' ')
 }
+
+export const assign = (...sources) => Object.assign({}, ...sources)
