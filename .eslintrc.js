@@ -12,6 +12,9 @@ module.exports = {
     'html'
   ],
   rules: {
+    'import/resolver': {
+      node: { extensions: [ '.js', '.mjs' ] }
+    },
     'import/extensions': ['error', 'always', {
       js: 'never',
       vue: 'never'

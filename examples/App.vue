@@ -130,6 +130,7 @@
   #app
     max-width: 1000px
     margin: 0 auto
+    overflow-x: hidden
 
   header
     margin-top: 50px

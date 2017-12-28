@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import { transform } from '../utils'
+  import { transform, assign } from '../utils/index'
 
   const BASE = {
     zIndex: 1500,
@@ -58,26 +58,14 @@
           active: { scale3d: [1, 1, 1] },
         }
         const optionsMap = {
-          simple: { ...commonOptions },
+          simple: assign(commonOptions),
           random: {
-            default: {
-              ...commonOptions.default,
-              rotate: 0,
-            },
-            active: {
-              ...commonOptions.active,
-              rotate: `${(Math.random() * 10 - 5).toFixed(2)}deg`,
-            },
+            default: assign(commonOptions.default, { rotate: 0 }),
+            active: assign(commonOptions.default, { rotate: `${((Math.random() * 10) - 5).toFixed(2)}deg` }),
           },
           camber: {
-            default: {
-              ...commonOptions.default,
-              rotate: 0,
-            },
-            active: {
-              ...commonOptions.active,
-              rotate: `${this.index * 5}deg`,
-            },
+            default: assign(commonOptions.default, { rotate: 0 }),
+            active: assign(commonOptions.default, { rotate: `${this.index * 5}deg` }),
           },
           stagger: {
             default: {
@@ -112,8 +100,8 @@
 
         const commonStyle = {
           top,
-          color: this.hover ? '#fff': null,
-          backgroundColor: this.hover ? this.$$root.activeColor: null,
+          color: this.hover ? '#fff' : null,
+          backgroundColor: this.hover ? this.$$root.activeColor : null,
           transform: this.transform,
           zIndex: BASE.zIndex - (this.index + 1),
         }
@@ -121,10 +109,10 @@
         const styleMap = {
           simple: {},
           random: {
-            left: this.active ? `${Math.floor(Math.random() * 10 - 5)}px` : 0,
+            left: this.active ? `${Math.floor((Math.random() * 10) - 5)}px` : 0,
             'transition-delay': this.active ?
               `${(items.length - this.index - 1) * 100}ms` :
-              `${this.index * 100}ms`
+              `${this.index * 100}ms`,
           },
           camber: {
             top: this.active ?
@@ -147,10 +135,7 @@
           },
         }
 
-        return {
-          ...commonStyle,
-          ...styleMap[effect],
-        }
+        return assign(commonStyle, styleMap[effect])
       },
     },
 
