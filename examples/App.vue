@@ -50,7 +50,7 @@
 
         <div class="dropdown-main">
           <effect-dropdown label="Label" active-color="#97d1bc" effect="camber">
-            <effect-dropdown-item>Money</effect-dropdown-item>
+            <effect-dropdown-item disabled>Money</effect-dropdown-item>
             <effect-dropdown-item>Bear</effect-dropdown-item>
             <effect-dropdown-item>Money1</effect-dropdown-item>
             <effect-dropdown-item>Bear1</effect-dropdown-item>

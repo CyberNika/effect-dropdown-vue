@@ -6,9 +6,9 @@
     :class="classname"
     @mouseenter="handleMouseenter"
     @mouseleave="handleMouseleave">
-    <slot>
-      {{ label }}
-    </slot>
+    <span class="effect-dropdown-item__label" :style="labelStyle">
+      <slot>{{ label }}</slot>
+    </span>
   </li>
 </template>
 
@@ -35,6 +35,7 @@
       return {
         index: null,
         hover: false,
+        randomLeft: '',
       }
     },
     computed: {
@@ -46,6 +47,13 @@
           'effect-dropdown-item': true,
           [`effect-dropdown-item--${this.$$root.effect}`]: true,
           'effect-dropdown-item--active': this.active,
+          'effect-dropdown-item--disabled': this.disabled,
+        }
+      },
+      labelStyle () {
+        return {
+          color: this.hover ? '#fff' : null,
+          backgroundColor: this.hover ? this.$$root.activeColor : null,
         }
       },
 
@@ -61,11 +69,11 @@
           simple: assign(commonOptions),
           random: {
             default: assign(commonOptions.default, { rotate: 0 }),
-            active: assign(commonOptions.default, { rotate: `${((Math.random() * 10) - 5).toFixed(2)}deg` }),
+            active: assign(commonOptions.active, { rotate: `${((Math.random() * 10) - 5).toFixed(2)}deg` }),
           },
           camber: {
             default: assign(commonOptions.default, { rotate: 0 }),
-            active: assign(commonOptions.default, { rotate: `${this.index * 5}deg` }),
+            active: assign(commonOptions.active, { rotate: `${this.index * 5}deg` }),
           },
           stagger: {
             default: {
@@ -100,8 +108,6 @@
 
         const commonStyle = {
           top,
-          color: this.hover ? '#fff' : null,
-          backgroundColor: this.hover ? this.$$root.activeColor : null,
           transform: this.transform,
           zIndex: BASE.zIndex - (this.index + 1),
         }
@@ -109,7 +115,7 @@
         const styleMap = {
           simple: {},
           random: {
-            left: this.active ? `${Math.floor((Math.random() * 10) - 5)}px` : 0,
+            left: this.randomLeft,
             'transition-delay': this.active ?
               `${(items.length - this.index - 1) * 100}ms` :
               `${this.index * 100}ms`,
@@ -136,6 +142,13 @@
         }
 
         return assign(commonStyle, styleMap[effect])
+      },
+    },
+    watch: {
+      active (value) {
+        if (this.$$root.effect === 'random') {
+          this.randomLeft = value ? `${Math.floor((Math.random() * 10) - 5)}px` : 0
+        }
       },
     },
 
