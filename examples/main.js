@@ -4,8 +4,8 @@ import App from './App.vue'
 import EffectDropdown from '../src'
 import '../src/styles/index.styl'
 
-// import EffectDropdown from 'effect-dropdown'
-// import 'effect-dropdown/dist/index.css'
+// import EffectDropdown from 'effect-dropdown-vue'
+// import 'effect-dropdown-vue/dist/index.css'
 
 Vue.use(EffectDropdown)
 
