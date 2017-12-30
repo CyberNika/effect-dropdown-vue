@@ -2,6 +2,7 @@
   <div :class="dropdownCls">
     <span :class="labelCls" :style="labelStyle" @click="toggle">
       {{ label }}
+      <i class="effect-dropdown__label-caret effect-dropdown-iconfont"></i>
     </span>
 
     <ul class="effect-dropdown__content">

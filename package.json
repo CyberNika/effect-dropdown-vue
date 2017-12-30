@@ -25,26 +25,32 @@
     "prepublishOnly": "npm run lint && npm run build:package",
     "lint": "eslint --ext .js,.vue src",
     "lint:fix": "eslint --ext .js,.vue src --fix",
+    "test": "jest --config test/jest.conf.js --coverage",
     "ghpages": "npm run build:example && node build/gh-pages.js"
   },
   "dependencies": {
-    "vue": "^2.5.13"
+    "vue": "^2.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.3",
+    "babel-eslint": "^8.1.2",
+    "babel-jest": "^22.0.4",
     "babel-loader": "^7.1.2",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
-    "eslint": "^4.13.1",
+    "eslint": "^4.14.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-html": "^4.0.1",
     "eslint-plugin-import": "^2.8.0",
     "file-loader": "^1.1.6",
     "fs-extra": "^5.0.0",
     "gh-pages": "^1.1.0",
+    "jest": "^22.0.4",
+    "jest-serializer-vue": "^0.3.0",
     "rollup": "^0.52.3",
     "rollup-plugin-copy": "^0.2.3",
     "rollup-plugin-vue": "^3.0.0",
@@ -52,6 +58,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "url-loader": "^0.6.2",
+    "vue-jest": "^1.4.0",
     "vue-loader": "^13.6.0",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0",
@@ -59,12 +66,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/XBT1/effect-dropdown.git"
+    "url": "https://github.com/XBT1/effect-dropdown-vue.git"
   },
   "bugs": {
-    "url": "https://github.com/XBT1/effect-dropdown/issues"
+    "url": "https://github.com/XBT1/effect-dropdown-vue/issues"
   },
-  "homepage": "https://github.com/XBT1/effect-dropdown",
+  "homepage": "https://github.com/XBT1/effect-dropdown-vue",
   "browserslist": [
     "> 1%",
     "last 2 versions",

@@ -1,4 +1,4 @@
-# effect-dropdown
+# effect-dropdown-vue
 
 [![NPM version][badge-npm-version]][url-npm]
 [![Node version][badge-node-version]][url-npm]
@@ -15,20 +15,20 @@ Simple effects for Dropdown based on Vue.js。
 ## Installation
 
 ```bash
-$ yarn add effect-dropdown # npm i -S effect-dropdown
+$ npm i -S effect-dropdown-vue # yarn add effect-dropdown-vue
 ```
 
 ## Gallery
 
-[Go to online examples](https://xbt1.github.io/effect-dropdown/)
+[Go to online examples](https://xbt1.github.io/effect-dropdown-vue/)
 
 ## Usage
 
 A simple example
 
 ```javascript
-  import EffectDropdown from 'effect-dropdown'
-  import 'effect-dropdown/dist/index.css'
+  import EffectDropdown from 'effect-dropdown-vue'
+  import 'effect-dropdown-vue/dist/index.css'
 
   Vue.use(EffectDropdown)
 ```
@@ -51,16 +51,16 @@ See [usage](./docs/usage-en.md) & [examples](./examples) for more details.
 ## Develop
 
 ```bash
-$ yarn install
-$ yarn dev
+$ npm install
+$ npm run dev
 ```
 
 ## Build
 
 ```bash
-$ yarn build:package # Build for npm
-$ yarn build:example # Build for site
-$ yarn build # build:package & build:example
+$ npm run build:package # Build for npm
+$ npm run build:example # Build for site
+$ npm run build # build:package & build:example
 ```
 
 ## Changelog
@@ -68,14 +68,14 @@ $ yarn build # build:package & build:example
 See [releases][url-releases]
 
 
-[badge-npm-version]: https://img.shields.io/npm/v/effect-dropdown.svg
-[badge-node-version]: https://img.shields.io/node/v/effect-dropdown.svg
-[badge-npm-download]: https://img.shields.io/npm/dt/effect-dropdown.svg
-[badge-license]: https://img.shields.io/github/license/XBT1/effect-dropdown.svg
-[badge-dependencies]: https://img.shields.io/david/dev/XBT1/effect-dropdown.svg
+[badge-npm-version]: https://img.shields.io/npm/v/effect-dropdown-vue.svg
+[badge-node-version]: https://img.shields.io/node/v/effect-dropdown-vue.svg
+[badge-npm-download]: https://img.shields.io/npm/dt/effect-dropdown-vue.svg
+[badge-license]: https://img.shields.io/github/license/XBT1/effect-dropdown-vue.svg
+[badge-dependencies]: https://img.shields.io/david/dev/XBT1/effect-dropdown-vue.svg
 
-[url-npm]: https://npmjs.org/package/effect-dropdown
-[url-dependencies]: https://david-dm.org/vkbansal/effect-dropdown
-[url-releases]: https://github.com/XBT1/effect-dropdown/releases
+[url-npm]: https://npmjs.org/package/effect-dropdown-vue
+[url-dependencies]: https://david-dm.org/vkbansal/effect-dropdown-vue
+[url-releases]: https://github.com/XBT1/effect-dropdown-vue/releases
 
-[image-npm]: https://nodei.co/npm/effect-dropdown.png
+[image-npm]: https://nodei.co/npm/effect-dropdown-vue.png
