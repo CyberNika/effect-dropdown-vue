@@ -20,6 +20,8 @@ $ npm i -S effect-dropdown-vue # yarn add effect-dropdown-vue
 
 ## 概览
 
+![概览](./docs/images/gallery.gif)
+
 [访问在线示例](https://xbt1.github.io/effect-dropdown-vue/)
 
 ## 使用

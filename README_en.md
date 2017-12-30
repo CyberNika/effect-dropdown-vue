@@ -20,6 +20,8 @@ $ npm i -S effect-dropdown-vue # yarn add effect-dropdown-vue
 
 ## Gallery
 
+![Gallery](./docs/images/gallery.gif)
+
 [Go to online examples](https://xbt1.github.io/effect-dropdown-vue/)
 
 ## Usage
