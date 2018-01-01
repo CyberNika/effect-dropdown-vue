@@ -21,7 +21,7 @@
         <p class="dropdown-desc">
           默认效果，折叠时具有些许间隔，激活时选项之间间隔 5px。
 
-          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#L23">源码</a>
+          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#L28">源码</a>
         </p>
 
         <div class="dropdown-main">
@@ -50,7 +50,7 @@
         <p class="dropdown-desc">
           random 效果，折叠时具有些许间隔，激活时选项之间间隔 5px，每个选项具有随机的角度旋转和偏移，以及不同的 animation-delay。
 
-          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#53">源码</a>
+          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#L57">源码</a>
         </p>
 
         <div class="dropdown-main">
@@ -67,7 +67,7 @@
         <p class="dropdown-desc">
           camber 效果，折叠时具有些许间隔，激活时选项之间间隔 5px，依次排列组成圆弧状，并有不同的 animation-delay。
 
-          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#70">源码</a>
+          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#L74">源码</a>
         </p>
 
         <div class="dropdown-main">
@@ -97,11 +97,11 @@
         <p class="dropdown-desc">
           raiseLabel 效果，折叠时具有些许间隔，激活时选项之间没有间隔，依次排列。label 被点击时会有收缩的 3D 效果。
 
-          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#100">源码</a>
+          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#L104">源码</a>
         </p>
 
         <div class="dropdown-main">
-          <effect-dropdown label="Select your platform" active-color="#f8b161" raise-label style="z-index: 3300;">
+          <effect-dropdown label="Select your platform" active-color="#f8b161" raise-label :gutter="0" style="z-index: 3300;">
             <effect-dropdown-item>
               <i class="ion-social-apple"></i>
               <span>iOS</span>
@@ -126,11 +126,11 @@
         <p class="dropdown-desc">
           stagger 效果。默认不折叠，激活时从两侧滑入，且选项之间间隔 5px。
 
-          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#129">源码</a>
+          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#L133">源码</a>
         </p>
 
         <div class="dropdown-main">
-          <effect-dropdown label="Select your technology" :auto-hide="false" active-color="#c29ad2" effect="stagger" style="z-index: 3200;">
+          <effect-dropdown label="Select your technology" active-color="#c29ad2" effect="stagger" style="z-index: 3200;">
             <effect-dropdown-item>
               <i class="ion-social-html5"></i>
               <span>HTML5</span>
@@ -159,7 +159,7 @@
         <p class="dropdown-desc">
           fence 效果。默认不折叠，激活时依次从两侧滑入，且选项之间间隔 5px，具有不同的 animation-delay。
 
-          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#162">源码</a>
+          <a class="source-link" target="_blank" href="https://github.com/XBT1/effect-dropdown-vue/blob/master/examples/App.vue#L166">源码</a>
         </p>
 
         <div class="dropdown-main">
@@ -191,6 +191,16 @@
         <a target="__blank" href="https://tympanus.net/Development/SimpleDropDownEffects" class="reference-link">SimpleDropDownEffects</a>
         <span> ❤︎ Created by</span>
         <a target="__blank" href="https://github.com/XBT1/" class="reference-link">XBT1</a>
+      </p>
+      <p>
+        <span>For React version to see </span>
+        <a
+          target="__blank"
+          href="https://github.com/XBT1/effect-dropdown-react"
+          className="reference-link"
+        >
+          effect-dropdown-react
+        </a>
       </p>
     </footer>
   </div>
@@ -278,12 +288,15 @@
         font-size: 14px
 
   footer
-    padding: 10px 0
+    padding: 10px 0 20px
     text-align: center
     color: #c3c8cd
 
     a
       color: #c3c8cd
+
+    p
+      margin: 0
 
   @media (max-width: 640px)
     header

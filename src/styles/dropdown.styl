@@ -8,6 +8,7 @@ $menu-item
   line-height: menu-height
   box-sizing: border-box
   cursor: pointer
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
 
 $text-overflow
   white-space: nowrap
@@ -22,10 +23,18 @@ $text-overflow
   text-align: left
   font-weight: 700
 
+  &:not(.effect-dropdown--active)
+    .effect-dropdown-item
+      &:first-child
+        box-shadow: none
+
   &.effect-dropdown--active
     .effect-dropdown__label-caret
       &::after
         transform: rotate(-90deg)
+
+    .effect-dropdown-item--camber
+      transform-origin: -200% 50%
 
   .effect-dropdown__label
     @extend $menu-item
@@ -82,7 +91,6 @@ $text-overflow
     left: 0
     transition: all 0.3s ease
     overflow: hidden
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
 
     .effect-dropdown-item__label
       @extend $text-overflow
@@ -99,7 +107,3 @@ $text-overflow
   .effect-dropdown-item--disabled
     color: rgba(dropdown-item-color, 0.35)
     cursor: not-allowed
-
-  .effect-dropdown-item--active
-    &.effect-dropdown-item--camber
-      transform-origin: -200% 50%

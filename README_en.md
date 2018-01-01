@@ -50,6 +50,10 @@ A simple example
 
 See [usage](./docs/usage-en.md) & [examples](./examples) for more details.
 
+## React
+
+[See React version](https://xbt1.github.io/effect-dropdown-react/)
+
 ## Develop
 
 ```bash
