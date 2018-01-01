@@ -66,7 +66,6 @@
 - `effect-dropdown__label--raise`: 标题-激活时具有 3d 效果
 - `effect-dropdown__content`: 选项容器
 - `effect-dropdown-item`: 单个选项
-- `effect-dropdown-item--active`: 展开后的单个选项
 - `effect-dropdown-item--disabled`: 单个选项禁用状态
 - `effect-dropdown-item--simple`: 单个选项-simple 效果
 - `effect-dropdown-item--random`: 单个选项-random 效果

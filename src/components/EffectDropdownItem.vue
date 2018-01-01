@@ -46,7 +46,6 @@
         return {
           'effect-dropdown-item': true,
           [`effect-dropdown-item--${this.$$root.effect}`]: true,
-          'effect-dropdown-item--active': this.active,
           'effect-dropdown-item--disabled': this.disabled,
         }
       },
@@ -146,6 +145,8 @@
     },
     watch: {
       active (value) {
+        this.hover = false
+
         if (this.$$root.effect === 'random') {
           this.randomLeft = value ? `${Math.floor((Math.random() * 10) - 5)}px` : 0
         }

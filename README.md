@@ -50,6 +50,10 @@ $ npm i -S effect-dropdown-vue # yarn add effect-dropdown-vue
 
 详细使用方法见 [文档](./docs/usage.md) & [例子](./examples)
 
+## React
+
+[查看 React 版本](https://xbt1.github.io/effect-dropdown-react/)
+
 ## 开发
 
 ```bash

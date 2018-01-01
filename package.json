@@ -1,7 +1,7 @@
 {
   "name": "effect-dropdown-vue",
   "description": "Simple effects for Dropdown based on Vue.js",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "XBT1 <xbtop1@gmail.com>",
   "license": "MIT",
   "main": "dist/index.common.js",
@@ -20,7 +20,6 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config examples/webpack.config.js --content-base examples/ --hot",
     "build": "npm run build:package & npm run build:example",
     "build:package": "rm -fr dist && rollup -c && stylus src/styles/index.styl --out dist",
-    "build:vue": "rm -fr vue && rollup -c build/rollup.vue.config.js && stylus src/styles/index.styl --out styles",
     "build:example": "rm -fr sites && cross-env NODE_ENV=production webpack --config examples/webpack.config.js --progress --hide-modules && cp examples/index.html sites",
     "prepublishOnly": "npm run lint && npm run build:package",
     "lint": "eslint --ext .js,.vue src",
