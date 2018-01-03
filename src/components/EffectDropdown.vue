@@ -93,7 +93,7 @@
       addItem (vm, cb) {
         this.items.push(vm)
 
-        cb && cb(this.items.length - 1)
+        cb && typeof cb === 'function' && cb(this.items.length - 1)
       },
       toggle () {
         this.active = !this.active
