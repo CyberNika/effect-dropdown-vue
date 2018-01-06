@@ -1,7 +1,7 @@
 {
   "name": "effect-dropdown-vue",
   "description": "Simple effects for Dropdown based on Vue.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "XBT1 <xbtop1@gmail.com>",
   "license": "MIT",
   "main": "dist/index.common.js",
